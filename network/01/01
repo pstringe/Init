@@ -1,0 +1,3 @@
+ifconfig is used to check and configure network interface parameters the -l option filters the information to just just display the names of the interfaces
+
+ifconfig -l
