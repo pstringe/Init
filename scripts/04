@@ -1,0 +1,17 @@
+#!/bin/bash
+# 0 0 * * *
+
+filename=/etc/crontab
+
+m1=$(md5sum "$filename")
+
+while true; do
+	sleep 1
+
+	m2=$(md5sum "$filename")
+
+	if [ "$m1" != "$m2" ] ; then
+		mail -s "/etc/crontab file was modified"
+		exit 1
+	fi
+done

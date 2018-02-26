@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ls -pR $1 | grep -v / | sort -k 5 -rn
